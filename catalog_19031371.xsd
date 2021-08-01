@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="pexmusic_store">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="pex_header">
+          <xs:complexType>
+            <xs:sequence>
+              <!--DTD has bound the rules for entity(store name,owner)-->
+              <!--Setting the fixed values rules in case dtd fails to link-->
+              <xs:element type="xs:string" name="pex_logo" fixed="" />
+              <xs:element type="xs:string" name="pex_name" fixed="Pex Music Store" />
+              <xs:element type="xs:string" name="pex_slogan" />
+              <xs:element name="pexmusic_info">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="pex_address" />
+                    <!--At least one contact number is required and is not practical for store to have more than five contact numbers-->
+                    <xs:element name="pex_number" maxOccurs="5" minOccurs="1">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:integer">
+                            <!--Store can have any pattern of phone numbers diversed from IP calling(Skype/Viber) to telecom numbers-->
+                            <!--So not restricitng to only +977 starting pattern-->
+                            <xs:attribute type="xs:string" name="type" use="optional" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="pex_url">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:anyURI">
+                          <!--to restrict keeping in-secure http site-->
+                          <xs:pattern value="https://.+" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="pex_owner" />
+                    <xs:element type="xs:string" name="pex_establishment" />
+                    <xs:element type="xs:string" name="pex_opentime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="pex_cover">
+                <xs:complexType>
+                  <xs:sequence>
+                    <!--making the fixed value null as no values will be stored in this element-->
+                    <xs:element name="pex_animation" fixed="" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pex_body">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="column_song_names">
+                <xs:complexType>
+                  <!--the sequence of the table header must be in order-->
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="song" />
+                    <xs:element type="xs:string" name="singer" />
+                    <xs:element type="xs:string" name="duration" />
+                    <xs:element type="xs:string" name="genre" />
+                    <xs:element type="xs:string" name="priceD" />
+                    <xs:element type="xs:string" name="writer" />
+                    <xs:element type="xs:string" name="producer" />
+                    <xs:element type="xs:string" name="releaseT" />
+                    <xs:element type="xs:string" name="albumG" />
+                    <xs:element type="xs:string" name="director" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="pex_musics">
+                <xs:complexType>
+                  <xs:sequence>
+                    <!--store at least have one music for sale, so setting the minOccurs to one-->
+                    <xs:element name="pex_music" maxOccurs="unbounded" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="song_name" />
+                          <xs:element name="singer_name">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <!--gender attribute is optional-->
+                                  <xs:attribute type="xs:string" name="gender" use="optional" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="pex_duration" />
+                          <xs:element name="pex_genre">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <!--having limited genre options-->
+                                <xs:enumeration value="Dubstep" />
+                                <xs:enumeration value="Country" />
+                                <xs:enumeration value="Jazz Music" />
+                                <xs:enumeration value="Pop Music" />
+                                <xs:enumeration value="Rock Music" />
+                                <xs:enumeration value="Folk" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="price">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:float">
+                                  <!--store has items either in discounted price or not, so having boolean discount as required-->
+                                  <xs:attribute type="xs:boolean" name="discount" use="required" />
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <!--making producer,director,album info as optional by setting min and max occurs-->
+                          <xs:element type="xs:string" name="writer_name" />
+                          <xs:element type="xs:string" name="producer_name" minOccurs="0" maxOccurs="1" />
+                          <xs:element type="xs:date" name="release" />
+                          <xs:element type="xs:string" name="album" minOccurs="0" maxOccurs="1" />
+                          <xs:element type="xs:string" name="director_name" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                        <!--defining attributes of pex_music-->
+                        <xs:attribute type="xs:ID" name="id" use="required" />
+                        <xs:attribute type="xs:string" name="language" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="pex_footer">
+          <!--Documentation element is used to enter text comments in a schema-->
+          <xs:annotation>
+            <xs:documentation>/*&amp;#169; makes copyright symbol*/</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

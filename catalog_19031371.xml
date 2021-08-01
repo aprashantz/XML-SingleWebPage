@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<?xml-stylesheet type="text/css" href="catalog_19031371.css"?>
+<!DOCTYPE pexmusic_store SYSTEM "catalog_19031371.dtd" [
+	<!--These store information are not changable data so, declared as entity-->
+	<!ENTITY storeName "Pex Music Store">
+	<!ENTITY owner "Owner: Mr. Prashant Ghimire">
+	<!ENTITY establishment "Establishment: 2021-01-01">
+]>
+
+<pexmusic_store
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="catalog_19031371.xsd">
+
+	<pex_header>
+		<pex_logo />
+		<pex_name>&storeName;</pex_name>
+		<pex_slogan>
+			<![CDATA["-We have magic that touches your soul"]]>
+		</pex_slogan>
+		<pexmusic_info>
+			<pex_address>Kamal Marg, Kathmandu 44600</pex_address>
+			<pex_number type="mobile">+9779818596327</pex_number>
+			<pex_number type="landline">014514545</pex_number>
+			<pex_url>https://pexmusic.com</pex_url>
+			<pex_owner>&owner;</pex_owner>
+			<pex_establishment>&establishment;</pex_establishment>
+			<pex_opentime>Opening Hours: 10AM-4PM</pex_opentime>
+		</pexmusic_info>
+		<pex_cover>
+			<pex_animation />
+		</pex_cover>
+	</pex_header>
+
+	<pex_body>
+		<column_song_names>
+			<song>Name</song>
+			<singer>Artist</singer>
+			<duration>Time</duration>
+			<genre>Genre</genre>
+			<priceD>Price &#163;</priceD>
+			<writer>Writer</writer>
+			<producer>Producer</producer>
+			<releaseT>Release</releaseT>
+			<albumG>Album</albumG>
+			<director>Director</director>
+		</column_song_names>
+
+		<pex_musics>
+
+			<pex_music id="m1" language="Nepali">
+				<song_name>Resham</song_name>
+				<singer_name gender="male">Amrit Gurung</singer_name>
+				<pex_duration>4:28</pex_duration>
+				<pex_genre>Dubstep</pex_genre>
+				<price discount="true">4.5</price>
+				<writer_name>Laxmi Joshi</writer_name>
+				<producer_name>Nepathya</producer_name>
+				<release>2008-01-12</release>
+				<album>Resham</album>
+				<director_name>Kiran Shrestha</director_name>
+			</pex_music>
+
+			<pex_music id="m2" language="English">
+				<song_name>God Day</song_name>
+				<singer_name>Gregg Street</singer_name>
+				<pex_duration>3:58</pex_duration>
+				<pex_genre>Dubstep</pex_genre>
+				<price discount="true">2.2</price>
+				<writer_name>Melvi Adams</writer_name>
+				<producer_name>Earborne</producer_name>
+				<release>2009-03-25</release>
+				<album>Sertif</album>
+			</pex_music>
+
+			<pex_music id="m3" language="Nepali">
+				<song_name>Wildfire</song_name>
+				<singer_name gender="male">Bipul Chettri</singer_name>
+				<pex_duration>3:30</pex_duration>
+				<pex_genre>Country</pex_genre>
+				<price discount="false">9.9</price>
+				<writer_name>Bipul Chettri</writer_name>
+				<producer_name>Bipuleno</producer_name>
+				<release>2014-12-24</release>
+				<album>Darjelling</album>
+			</pex_music>
+
+			<pex_music id="m4" language="Nepali">
+				<song_name>Karnali</song_name>
+				<singer_name>Omen Zinora</singer_name>
+				<pex_duration>5:14</pex_duration>
+				<pex_genre>Jazz Music</pex_genre>
+				<price discount="true">0.9</price>
+				<writer_name>Rohi Subba</writer_name>
+				<producer_name>Jimuraici</producer_name>
+				<release>2015-06-01</release>
+				<album>Ghatana</album>
+				<director_name>Bina Raut</director_name>
+			</pex_music>
+
+			<pex_music id="m5" language="Spanish">
+				<song_name>Papichulo</song_name>
+				<singer_name>Buto Fonsi</singer_name>
+				<pex_duration>4:40</pex_duration>
+				<pex_genre>Pop Music</pex_genre>
+				<price discount="false">4.4</price>
+				<writer_name>Erika Ender</writer_name>
+				<producer_name>Sony Music</producer_name>
+				<release>2017-01-13</release>
+				<album>Vida</album>
+				<director_name>Carlos Pérez</director_name>
+			</pex_music>
+
+			<pex_music id="m6" language="English">
+				<song_name>Perfect</song_name>
+				<singer_name>Ed Sheeran</singer_name>
+				<pex_duration>4:39</pex_duration>
+				<pex_genre>Jazz Music</pex_genre>
+				<price discount="false">4.3</price>
+				<writer_name>Edward Enro</writer_name>
+				<producer_name>Jack Hicks</producer_name>
+				<release>2017-09-26</release>
+				<album>Divide</album>
+				<director_name>Jason Koenig</director_name>
+
+			</pex_music>
+			<pex_music id="m7" language="Hindi">
+				<song_name>Sayyaah</song_name>
+				<singer_name>Lucky Ali</singer_name>
+				<pex_duration>3:13</pex_duration>
+				<pex_genre>Pop Music</pex_genre>
+				<price discount="true">5.6</price>
+				<writer_name>Lucky Ali</writer_name>
+				<producer_name>Taawuz Ali</producer_name>
+				<release>2019-03-28</release>
+				<album>Rasta Man</album>
+				<director_name>Augu Fernan</director_name>
+			</pex_music>
+
+			<pex_music id="m8" language="Nepali">
+				<song_name>Sompan</song_name>
+				<singer_name>Eppy Jin</singer_name>
+				<pex_duration>3:55</pex_duration>
+				<pex_genre>Pop Music</pex_genre>
+				<price discount="true">4.5</price>
+				<writer_name>Yin Lama</writer_name>
+				<producer_name>Phoinx Nikos</producer_name>
+				<release>2011-11-26</release>
+				<album>Saathi</album>
+			</pex_music>
+
+			<pex_music id="m9" language="English">
+				<song_name>Rock You</song_name>
+				<singer_name>Queen</singer_name>
+				<pex_duration>2:05</pex_duration>
+				<pex_genre>Rock Music</pex_genre>
+				<price discount="false">5.8</price>
+				<writer_name>Brian May</writer_name>
+				<producer_name>L House</producer_name>
+				<release>1977-05-29</release>
+				<album>News World</album>
+				<director_name>Saul Swimmer</director_name>
+			</pex_music>
+
+			<pex_music id="m10" language="English">
+				<song_name>My Heart</song_name>
+				<singer_name gender="female">Celine Dion</singer_name>
+				<pex_duration>7:22</pex_duration>
+				<pex_genre>Folk</pex_genre>
+				<price discount="true">3.8</price>
+				<writer_name>Will Jenn</writer_name>
+				<producer_name>Sony Music</producer_name>
+				<release>1997-03-21</release>
+				<album>About Love</album>
+				<director_name>James Horner</director_name>
+			</pex_music>
+
+		</pex_musics>
+
+	</pex_body>
+
+	<pex_footer>
+		<!--/*&#169; is for copyright symbol*/-->
+		Copyright &#169; 2021 Pex Music Pvt. Ltd.
+	</pex_footer>
+
+</pexmusic_store>
