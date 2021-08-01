@@ -1,0 +1,58 @@
+<!ELEMENT pexmusic_store (pex_header, pex_body, pex_footer)>
+<!--declaring two attributes of schema also so that we wont get error during validating xml file -->
+<!ATTLIST pexmusic_store xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST pexmusic_store xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+
+<!ELEMENT pex_header (pex_logo, pex_name, pex_slogan?, pexmusic_info,pex_cover)>
+
+<!ELEMENT pex_logo EMPTY>
+<!ELEMENT pex_name (#PCDATA)>
+<!ELEMENT pex_slogan (#PCDATA)>
+<!ELEMENT pexmusic_info (pex_address,pex_number+,pex_url?,pex_owner,pex_establishment,pex_opentime)>
+<!ELEMENT pex_address (#PCDATA)>
+<!ELEMENT pex_number (#PCDATA)>
+<!ATTLIST pex_number type (mobile|landline) "mobile">
+<!ELEMENT pex_url (#PCDATA)>
+<!ELEMENT pex_owner (#PCDATA)>
+<!ELEMENT pex_establishment (#PCDATA)>
+<!ELEMENT pex_opentime (#PCDATA)>
+
+<!ELEMENT pex_cover (pex_animation?)>
+<!ELEMENT pex_animation EMPTY>
+
+<!ELEMENT pex_body (column_song_names, pex_musics)>
+
+<!ELEMENT column_song_names (song,singer,duration,genre,priceD,writer,producer,releaseT,albumG,director)>
+<!ELEMENT song (#PCDATA)>
+<!ELEMENT singer (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT priceD (#PCDATA)>
+<!ELEMENT writer (#PCDATA)>
+<!ELEMENT producer (#PCDATA)>
+<!ELEMENT releaseT (#PCDATA)>
+<!ELEMENT albumG (#PCDATA)>
+<!ELEMENT director (#PCDATA)>
+
+<!ELEMENT pex_musics (pex_music+)>
+
+<!--making producer,director,album info as optional-->
+<!ELEMENT pex_music (song_name,singer_name,pex_duration,pex_genre,price,writer_name,producer_name?,release,album?,director_name?)>
+<!ATTLIST pex_music id ID #REQUIRED>
+<!ATTLIST pex_music language (Nepali|English|Hindi|Spanish) #REQUIRED>
+
+<!ELEMENT song_name (#PCDATA)>
+<!ELEMENT singer_name (#PCDATA)>
+<!ATTLIST singer_name gender (male|female) #IMPLIED>
+<!ELEMENT pex_duration (#PCDATA)>
+<!ELEMENT pex_genre (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!--discount can either be true or false-->
+<!ATTLIST price discount (true|false) #REQUIRED>
+<!ELEMENT writer_name (#PCDATA)>
+<!ELEMENT producer_name (#PCDATA)>
+<!ELEMENT release (#PCDATA)>
+<!ELEMENT album (#PCDATA)>
+<!ELEMENT director_name (#PCDATA)>
+
+<!ELEMENT pex_footer (#PCDATA)>
